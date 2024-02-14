@@ -43,12 +43,12 @@ public:
      Library(const std::string& name) : name(name) {}
 
     void addBook(const Book& book) { books.push_back(book); }
-    void removeBook(const Book& book); // Implementation needed 
+    void removeBook(const Book& book);  
     void addMember(const Member& member) { members.push_back(member); }
-    void removeMember(const Member& member); // Implementation needed 
-    Book* searchBook(const std::string& title); // Implementation needed
-    void issueBook(Member* member, Book* book); // Implementation needed
-    void returnBook(Member* member, Book* book); // Implementation needed 
+    void removeMember(const Member& member); 
+    Book* searchBook(const std::string& title); 
+    void issueBook(Member* member, Book* book); 
+    void returnBook(Member* member, Book* book); 
 
 private:
     std::string name;
@@ -57,7 +57,7 @@ private:
 };
 
 
-// removeBook (Implementation)
+
 void Library::removeBook(const Book& book) {
     auto it = std::find_if(books.begin(), books.end(), 
                            [&book](const Book& b) { return b.getISBN() == book.getISBN(); });
@@ -70,7 +70,7 @@ void Library::removeBook(const Book& book) {
     }
 }
 
-// removeMember (Implementation)
+
 void Library::removeMember(const Member& member) {
     auto it = std::find_if(members.begin(), members.end(), 
                            [&member](const Member& m) { return m.getMemberID() == member.getMemberID(); });
@@ -83,7 +83,7 @@ void Library::removeMember(const Member& member) {
     }
 }
 
-// searchBook (Implementation - Simple linear search)
+
 Book* Library::searchBook(const std::string& title) {
     auto it = std::find_if(books.begin(), books.end(), 
                            [&title](const Book& b) { return b.getTitle() == title; });
@@ -95,7 +95,7 @@ Book* Library::searchBook(const std::string& title) {
     }
 }
 
-// issueBook (Implementation)
+
 void Library::issueBook(Member* member, Book* book) {
     if (book->isAvailable()) {
         member->borrowedBooks.push_back(book);
@@ -106,7 +106,7 @@ void Library::issueBook(Member* member, Book* book) {
     }
 }
 
-// returnBook (Implementation)
+
 void Library::returnBook(Member* member, Book* book) {
     auto bookIt = std::find(member->borrowedBooks.begin(), member->borrowedBooks.end(), book);
     if (bookIt != member->borrowedBooks.end()) {
@@ -138,8 +138,7 @@ int main(){
         std::cout << "Book not found." << std::endl;
     }
 
-    // ... More operations (issue, return, etc.)
-
+   
     return 0;
     
 }

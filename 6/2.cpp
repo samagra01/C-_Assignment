@@ -45,11 +45,11 @@ Circle::Circle(double radius) : radius(radius) {}
 
 void Circle::calculateArea() {
     double area = PI * radius * radius;
-    std::cout << "Circle area: " << area << std::endl;
+    cout << "Circle area: " << area << endl;
 }
 
 void Circle::draw() const {
-    std::cout << "Drawing a circle...\n";
+   cout << "Drawing a circle" << endl;
 }
 
 // Rectangle ******
@@ -57,11 +57,11 @@ Rectangle::Rectangle(double width, double height) : width(width), height(height)
 
 void Rectangle::calculateArea() {
     double area = width * height;
-    std::cout << "Rectangle area: " << area << std::endl;
+    cout << "Rectangle area: " << area << endl;
 }
 
 void Rectangle::draw() const {
-    std::cout << "Drawing a rectangle...\n";
+    cout << "Drawing a rectangle" << endl;
 }
 
 // Triangle******
@@ -69,11 +69,11 @@ Triangle::Triangle(double base, double height) : base(base), height(height) {}
 
 void Triangle::calculateArea() {
     double area = 0.5 * base * height;
-    std::cout << "Triangle area: " << area << std::endl;
+    cout << "Triangle area: " << area << endl;
 }
 
 void Triangle::draw() const {
-    std::cout << "Drawing a triangle...\n";
+    std::cout << "Drawing a triangle" << endl;
 }
 
 

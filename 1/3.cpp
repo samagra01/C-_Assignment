@@ -9,6 +9,8 @@ int main(){
 
    // Example :-
 
+   // Comment // 
+
    int age = 20; // here we have declared and initialized age 
 
    /*
